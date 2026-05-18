@@ -72,14 +72,3 @@ The system enables users to upload documents, perform semantic similarity search
 
 ---
 
-## Project Structure
-
-```text
-notemind_ai/
-│
-├── backend/
-├── frontend/
-├── diagrams/
-├── screenshots/
-├── report/
-└── README.md
