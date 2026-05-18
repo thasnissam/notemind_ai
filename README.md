@@ -1,6 +1,6 @@
 # NoteMind AI
 
-## AI-Powered Personal Knowledge Management System using Semantic Search and Retrieval-Augmented Generation (RAG)
+## AI-Powered Personal Knowledge Management System
 
 ---
 
