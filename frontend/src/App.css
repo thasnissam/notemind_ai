@@ -1,0 +1,79 @@
+/* Standardized Scalable CSS */
+
+.counter {
+  /* Use rem so it scales with your Settings toggle */
+  font-size: 1rem; 
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-light); /* Linked to your new earthy theme */
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 1.5rem;
+
+  &:hover {
+    border-color: var(--accent);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 2rem 1.25rem 1.5rem;
+    gap: 1.1rem;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 2rem;
+    @media (max-width: 1024px) {
+      padding: 1.5rem 1.25rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  margin: 2rem 0 0;
+
+  a {
+    color: var(--text-primary);
+    font-size: 1rem; /* Standard readable size */
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    display: flex;
+    padding: 0.4rem 0.75rem;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow-card);
+    }
+  }
+}

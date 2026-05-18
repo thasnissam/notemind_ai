@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- LIGHT MODE: TROPICAL TRIAD --- */
+    --bg-primary: #ebe8e4;
+    --bg-secondary: #F2EDE0;
+    --bg-card: #FFFFFF;
+    
+    /* Improved Contrast for Readability */
+    --text-primary: #1A2F23;    /* Dark Jungle Green (Essential for accessibility) */
+    --text-secondary: #2D5A42;  /* Leaf Green */
+    --text-muted: #051b0f;
+    
+    /* THE TRIAD POINTS */
+    --accent: #FF6B35;         /* 1. Heat Orange */
+    --accent-violet: #818CF8;  /* 2. Tropical Violet */
+    --accent-green: #2D5A42;   /* 3. Jungle Green */
+    
+    --accent-light: rgba(255, 107, 53, 0.1);
+    --border: rgba(45, 90, 66, 0.15);
+    --shadow-card: 0 10px 30px -5px rgba(255, 107, 53, 0.12);
+    --radius: 16px;
+  }
+
+  .dark {
+    /* --- DARK MODE: MIDNIGHT TRIAD --- */
+    --bg-primary: #1e201f;
+    --bg-secondary: #142119;
+    --bg-card: #1d1c1c;
+    
+    --text-primary: #FCF9F2;   /* Sand White */
+    --text-secondary: #8B9D83; /* Muted Moss */
+    --text-muted: #e9eee8;     /* Deep Rainforest */
+
+    /* Brighter Triad for Dark Mode */
+    --accent: #df4b10;         
+    --accent-violet: #6d80e0;  
+    --accent-green: #4ADE80;   
+
+    --accent-light: rgba(255, 131, 82, 0.15);
+    --border: rgba(255, 255, 255, 0.1);
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  body {
+    @apply transition-colors duration-300;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Fix for Restricted Input Boxes (Sign In / Sign Up) */
+  .input-field {
+    @apply w-full block; /* Ensures it takes full width of container */
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    padding: 0.85rem 1.25rem;
+    font-size: 1rem;
+    @apply outline-none transition-all duration-200;
+    /* Prevent the box from being "squished" */
+    min-height: 3rem; 
+  }
+
+  .input-field:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-light);
+    @apply ring-0;
+  }
+
+  .btn-primary {
+    @apply w-full flex items-center justify-center font-semibold transition-all;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-violet) 100%);
+    color: white;
+    padding: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .btn-primary:hover {
+    @apply opacity-90;
+    transform: translateY(-1px);
+  }
+}
